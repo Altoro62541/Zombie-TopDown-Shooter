@@ -1,14 +1,21 @@
 using Zenject;
 using UnityEngine;
-using Zenject.SpaceFighter;
+using ZombieShooter.HealthSystem;
+using ZombieShooter.PlayerEntity;
 namespace ZombieShooter.ZombieEntity
 {
-    public class Zombie : MonoBehaviour
+    [RequireComponent(typeof(HealthComponent))]
+    public class Zombie : MonoBehaviour, IZombie
     {
-        [Inject] private Player _player;
-        private void Start()
+        [Inject] private IPlayer _player;
+
+        private IHeathComponent _healthComponent;
+
+        public IHeathComponent HeathComponent => _healthComponent;
+
+        private void Awake()
         {
-            //Debug.Log(_player);
+            _healthComponent = GetComponent<IHeathComponent>();
         }
 
     }

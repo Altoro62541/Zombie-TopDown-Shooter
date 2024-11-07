@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using Zenject;
+using ZombieShooter.InputSystem;
 namespace ZombieShooter.PlayerEntity
 {
     public class PlayerMovement : MonoBehaviour
@@ -8,6 +10,7 @@ namespace ZombieShooter.PlayerEntity
         [SerializeField, Min(0.1f)] private float _moveSpeed = 5;
         private bool _isMoving = false;
         private Vector2 _targetPosition;
+        [Inject] private IInputEventHandler _inputEventHandler;
 
 
         private void Start()
