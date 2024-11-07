@@ -72,6 +72,9 @@ MonoBehaviour:
     - Name: _intensity
       Entry: 4
       Data: 0.81
+    - Name: _hour
+      Entry: 4
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -108,6 +111,9 @@ MonoBehaviour:
     - Name: _intensity
       Entry: 4
       Data: 1
+    - Name: _hour
+      Entry: 4
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -144,6 +150,9 @@ MonoBehaviour:
     - Name: _intensity
       Entry: 4
       Data: 0.61
+    - Name: _hour
+      Entry: 4
+      Data: 16
     - Name: 
       Entry: 8
       Data: 
@@ -180,6 +189,9 @@ MonoBehaviour:
     - Name: _intensity
       Entry: 4
       Data: 0.5
+    - Name: _hour
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -192,3 +204,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  _tickMinutes: 1
+  _minutesPerTick: 1
+  _speed: 1

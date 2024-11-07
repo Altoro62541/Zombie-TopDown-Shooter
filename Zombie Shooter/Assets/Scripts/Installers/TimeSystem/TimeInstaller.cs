@@ -13,8 +13,8 @@ namespace ZombieShooter.Installers.TimeSystem
 
         public override void InstallBindings()
         {
-            Container.Bind<ILightProvider>().To<LightProvider>().FromNewComponentOnNewPrefab(_lightProviderPrefab).AsSingle().NonLazy();
-            Container.Bind<ITimeHandler>().To<TimeHandler>().FromNewComponentOnNewPrefab(_timeHandlerPrefab).AsSingle().NonLazy();
+            Container.Bind<ILightProvider>().To<LightProvider>().FromComponentInNewPrefab(_lightProviderPrefab).AsSingle().NonLazy();
+            Container.Bind<ITimeHandler>().To<TimeHandler>().FromComponentInNewPrefab(_timeHandlerPrefab).AsSingle().NonLazy();
         }
     }
 }

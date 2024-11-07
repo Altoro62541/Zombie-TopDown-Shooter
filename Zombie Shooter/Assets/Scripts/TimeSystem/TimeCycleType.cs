@@ -2,9 +2,9 @@
 {
     public enum TimeCycleType
     {
-        Morming,
-        Day,
-        Evening,
-        Night
+        Morming = 1,
+        Day = 2,
+        Evening = 3,
+        Night = 4
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace ZombieShooter.TimeSystem
 {
-    internal interface ITimeHandler
+    public interface ITimeHandler
     {
+        public string Time { get; }
     }
 }
