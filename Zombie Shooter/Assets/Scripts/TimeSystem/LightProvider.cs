@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using ZombieShooter.Extensions;
 
 namespace ZombieShooter.TimeSystem
 {
@@ -9,8 +11,11 @@ namespace ZombieShooter.TimeSystem
     {
         [SerializeField] private Light2D _light;
 
-        public Color Color { get => _light.color; set => _light.color = value; }
-        public float Intensity { get => _light.intensity; set => _light.intensity = value; }
+        public void TurnCycle(Color color, float intensity, float speed)
+        {
+            _light.DOColor(color, speed);
+            _light.DOIntensity(intensity, speed);
+        }
 
         private void OnValidate()
         {

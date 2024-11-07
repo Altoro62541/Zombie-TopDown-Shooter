@@ -47,10 +47,49 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: $v
       Entry: 7
       Data: 2|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _intensity
+      Entry: 4
+      Data: 1
+    - Name: _hour
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
     - Name: _color
       Entry: 7
       Data: UnityEngine.Color, UnityEngine.CoreModule
@@ -74,46 +113,7 @@ MonoBehaviour:
       Data: 0.81
     - Name: _hour
       Entry: 4
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
       Data: 1
-    - Name: $v
-      Entry: 7
-      Data: 3|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
-    - Name: _color
-      Entry: 7
-      Data: UnityEngine.Color, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _intensity
-      Entry: 4
-      Data: 1
-    - Name: _hour
-      Entry: 4
-      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -125,7 +125,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 3
     - Name: $v
       Entry: 7
       Data: 4|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
@@ -152,7 +152,7 @@ MonoBehaviour:
       Data: 0.61
     - Name: _hour
       Entry: 4
-      Data: 16
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -164,7 +164,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 4
     - Name: $v
       Entry: 7
       Data: 5|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
@@ -191,7 +191,7 @@ MonoBehaviour:
       Data: 0.5
     - Name: _hour
       Entry: 4
-      Data: 0
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -204,6 +204,5 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  _tickMinutes: 1
+  _tickMinutes: 0.1
   _minutesPerTick: 1
-  _speed: 1

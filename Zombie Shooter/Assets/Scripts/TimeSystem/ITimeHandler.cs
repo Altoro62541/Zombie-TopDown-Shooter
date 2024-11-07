@@ -1,7 +1,14 @@
-﻿namespace ZombieShooter.TimeSystem
+﻿using System;
+
+namespace ZombieShooter.TimeSystem
 {
     public interface ITimeHandler
     {
-        public string Time { get; }
+        event Action OnTick;
+        event Action<TimeCycle> OnNewCycle;
+        string Time { get; }
+        TimeCycle CurrentCycle { get; }
+        TimeCycle NextCycle { get; }
+
     }
 }

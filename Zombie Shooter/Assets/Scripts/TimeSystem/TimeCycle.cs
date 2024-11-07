@@ -14,5 +14,15 @@ namespace ZombieShooter.TimeSystem
         public float Intensity => _intensity;
 
         public float Hour => _hour;
+
+        public DateTime StartTime
+        {
+            get
+            {
+                DateTime time = new();
+                time = time.AddHours(_hour);
+                return time;
+            }
+        }
     }
 }
