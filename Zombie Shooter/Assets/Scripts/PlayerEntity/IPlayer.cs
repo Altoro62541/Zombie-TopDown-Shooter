@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZombieShooter.HealthSystem;
 
 namespace ZombieShooter.PlayerEntity
 {
-    internal interface IPlayer
+    public interface IPlayer
     {
+        IHeathComponent HeathComponent { get; }
     }
 }

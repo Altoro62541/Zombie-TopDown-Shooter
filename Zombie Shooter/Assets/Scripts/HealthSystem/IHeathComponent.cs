@@ -1,6 +1,13 @@
-﻿namespace ZombieShooter.HealthSystem
+﻿using UniRx;
+
+namespace ZombieShooter.HealthSystem
 {
-    internal interface IHeathComponent
+    public interface IHeathComponent
     {
+
+        IReadOnlyReactiveProperty<float> Health { get; }
+        IReadOnlyReactiveProperty<float> MaxHealth { get; }
+
+        public void Damage (float damage, object damager = null);
     }
 }
