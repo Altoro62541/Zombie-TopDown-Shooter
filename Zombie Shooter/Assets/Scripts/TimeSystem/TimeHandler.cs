@@ -17,7 +17,7 @@ namespace ZombieShooter.TimeSystem
         private int _startCycleIndex;
         private int _endCycleIndex;
 
-        private DateTime _currentTime;
+        public DateTime _currentTime;
         private TimeSpan _tick;
 
         private TimeCycle _currentCycle;
