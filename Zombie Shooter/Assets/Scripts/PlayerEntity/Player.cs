@@ -7,13 +7,13 @@ namespace ZombieShooter.PlayerEntity
     [RequireComponent(typeof(HealthComponent))]
     public class Player : MonoBehaviour, IPlayer
     {
-        private IHeathComponent _healthComponent;
+        private IHealthComponent _healthComponent;
 
-        public IHeathComponent HeathComponent => _healthComponent;
+        public IHealthComponent HeathComponent => _healthComponent;
 
         private void Awake()
         {
-            _healthComponent = GetComponent<IHeathComponent>();
+            _healthComponent = GetComponent<IHealthComponent>();
         }
     }
 
