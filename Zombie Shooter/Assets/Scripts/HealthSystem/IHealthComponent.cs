@@ -2,7 +2,7 @@
 
 namespace ZombieShooter.HealthSystem
 {
-    public interface IHeathComponent
+    public interface IHealthComponent
     {
 
         IReadOnlyReactiveProperty<float> Health { get; }

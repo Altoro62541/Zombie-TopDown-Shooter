@@ -1,17 +1,19 @@
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 using Zenject;
 using ZombieShooter.InputSystem;
 namespace ZombieShooter.PlayerEntity
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour, IPlayerMovement
     {
         protected Rigidbody2D _body;
-        [SerializeField, Min(0.1f)] private float _moveSpeed = 5;
+        [SerializeField, MinValue(0.1f)] private float _moveSpeed = 5;
         private bool _isMoving = false;
         private Vector2 _targetPosition;
         [Inject] private IInputEventHandler _inputEventHandler;
 
+        public bool IsMoving => _isMoving;
 
         private void Start()
         {

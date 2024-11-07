@@ -9,6 +9,6 @@ namespace ZombieShooter.PlayerEntity
 {
     public interface IPlayer
     {
-        IHeathComponent HeathComponent { get; }
+        IHealthComponent HeathComponent { get; }
     }
 }

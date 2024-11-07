@@ -4,6 +4,6 @@ namespace ZombieShooter.ZombieEntity
 {
     public interface IZombie
     {
-        IHeathComponent HeathComponent { get; }
+        IHealthComponent HeathComponent { get; }
     }
 }

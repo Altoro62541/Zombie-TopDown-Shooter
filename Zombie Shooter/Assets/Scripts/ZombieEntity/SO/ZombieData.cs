@@ -1,11 +1,16 @@
-﻿using UnityEditor;
+﻿using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Scripts.ZombieEntity.SO
+namespace ZombieShooter.ZombieEntity.SO
 {
+    [CreateAssetMenu]
     public class ZombieData : ScriptableObject
     {
-        [SerializeField] private float _health;
-        [SerializeField] private float _speedMove;
+        [SerializeField, MinValue(1)] private float _health;
+        [SerializeField, MinValue(0.1f)] private float _speedMove;
+
+        public float Health => _health;
+        public float SpeedMove => _speedMove;
     }
 }

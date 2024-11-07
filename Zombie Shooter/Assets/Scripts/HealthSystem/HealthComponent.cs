@@ -4,7 +4,7 @@ using System;
 
 namespace ZombieShooter.HealthSystem
 {
-    public class HealthComponent : MonoBehaviour, IHeathComponent
+    public class HealthComponent : MonoBehaviour, IHealthComponent
     {
         [SerializeField] private ReactiveProperty<float> _health = new();
         [SerializeField] private ReactiveProperty<float> _maxHealth = new();
@@ -27,6 +27,16 @@ namespace ZombieShooter.HealthSystem
             }
 
             _health.Value = Mathf.Clamp(_health.Value - damage, 0, _maxHealth.Value);
+        }
+
+        public void SetHealth (float health)
+        {
+            _health.Value = Mathf.Clamp(health, 0, _maxHealth.Value);
+        }
+
+        public void SetMaxHealth(float health)
+        {
+            _maxHealth.Value = Mathf.Clamp(health, 0, float.MaxValue);
         }
 
         private void OnValidate()
