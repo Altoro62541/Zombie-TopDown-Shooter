@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class InputEventHandler : MonoBehaviour
 {
     // public event Action<Vector2> OnTouch;
     // private void Update()
