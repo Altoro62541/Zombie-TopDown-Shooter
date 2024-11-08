@@ -352,8 +352,9 @@ MonoBehaviour:
   - {fileID: 1411985565}
   - {fileID: 2028510170}
   - {fileID: 1291682582}
-  - {fileID: 1598212105}
+  - {fileID: 212044904}
   - {fileID: 634886900}
+  - {fileID: 1598212105}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -391,7 +392,53 @@ Transform:
   - {fileID: 1291682583}
   - {fileID: 1598212106}
   - {fileID: 634886901}
+  - {fileID: 212044905}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &212044903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212044905}
+  - component: {fileID: 212044904}
+  m_Layer: 0
+  m_Name: LightTimeHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &212044904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212044903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2792303a3df6abb40a457043cc9e0fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6945169810024257075, guid: 83eee4a2650aead478e8efcd46fa7355, type: 3}
+--- !u!4 &212044905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212044903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 137609538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254911366
 GameObject:
@@ -30652,50 +30699,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 137609538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2051632599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2051632601}
-  - component: {fileID: 2051632600}
-  m_Layer: 0
-  m_Name: LightTimeHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2051632600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051632599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546401246bcc03945a1fcb0c5b4ee539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2051632601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051632599}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067341363
 GameObject:
   m_ObjectHideFlags: 0
@@ -30897,7 +30900,6 @@ SceneRoots:
   - {fileID: 1775870167}
   - {fileID: 137609538}
   - {fileID: 254911368}
-  - {fileID: 2051632601}
   - {fileID: 341539300}
   - {fileID: 40192751}
   - {fileID: 1908468785}
