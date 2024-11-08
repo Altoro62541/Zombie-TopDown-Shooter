@@ -11,6 +11,7 @@ namespace ZombieShooter.AI.ZombieAI
 
         private void Awake()
         {
+            _agent = GetComponent<NavMeshAgent>();
             _agent.updateRotation = false;
             _agent.updateUpAxis = false;
         }
