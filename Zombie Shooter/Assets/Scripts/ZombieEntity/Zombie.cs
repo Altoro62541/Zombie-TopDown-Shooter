@@ -7,9 +7,10 @@ using System;
 namespace ZombieShooter.ZombieEntity
 {
     [RequireComponent(typeof(HealthComponent))]
+    [RequireComponent(typeof(Despawn))]
     public class Zombie : MonoBehaviour, IZombie
     {
-      //  [Inject] private IPlayer _player;
+        [Inject] private IPlayer _player;
 
         private HealthComponent _healthComponent;
 

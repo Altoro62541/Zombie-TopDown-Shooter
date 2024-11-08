@@ -13,6 +13,8 @@ namespace ZombieShooter.PlayerEntity
 
         public Vector3 Position => transform.position;
 
+        public Transform Transform => transform;
+
         private void Awake()
         {
             _healthComponent = GetComponent<IHealthComponent>();

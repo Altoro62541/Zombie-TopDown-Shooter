@@ -2,13 +2,14 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Zenject;
+using ZombieShooter.Factories;
 using ZombieShooter.ZombieEntity;
 
 namespace ZombieShooter.Spawn
 {
     public class ZombieSpawn : MonoBehaviour
     {
-        [Inject] private DiContainer _container;
+        [Inject] private IZombieFactory _factory;
         [Inject] private IWorld _world;
         [SerializeField] private Zombie _zombie;
         [SerializeField] private Tilemap _tilemap;
@@ -28,7 +29,7 @@ namespace ZombieShooter.Spawn
 
                 if (position != Vector3.zero)
                 {
-                    _container.InstantiatePrefab(_zombie, position, Quaternion.identity, null);
+                    _factory.Create(_zombie, position, Quaternion.identity, null);
                 }
             }
         }
