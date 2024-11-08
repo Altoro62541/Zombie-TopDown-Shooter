@@ -4,9 +4,9 @@ using Zenject;
 
 namespace ZombieShooter.TimeSystem
 {
-    public class TimeUI : MonoBehaviour
+    public class DayUI : MonoBehaviour
 {
-    [Inject] private ITimeHandler _timeHandler;
+    [Inject] private IDayCounterHandler _dayHandler;
     private TextMeshProUGUI _timeText;
 
     private void Start()
@@ -14,18 +14,19 @@ namespace ZombieShooter.TimeSystem
         _timeText = GetComponent<TextMeshProUGUI>();
         UpdateText();
 
-        _timeHandler.OnTick += UpdateText;
+        _dayHandler.OnNewDay += UpdateText; 
     }
 
     private void OnDestroy()
     {
-        _timeHandler.OnTick -= UpdateText;
+        _dayHandler.OnNewDay -= UpdateText; 
     }
 
     private void UpdateText()
     {
-        _timeText.text = _timeHandler.Time;
+        _timeText.text = $"Day: {_dayHandler.CurrentDay}"; 
     }
 }
 }
+
 
