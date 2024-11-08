@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd308c53bcbd1147b9459e52f38d85d, type: 3}
   m_Name: Zombie Spawn Settings
   m_EditorClassIdentifier: 
-  _spawnRadius: 5
+  _spawnRadius: 14.37
   _curveSpawn:
     serializedVersion: 2
     m_Curve:

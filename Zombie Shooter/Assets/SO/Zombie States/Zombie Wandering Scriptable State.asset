@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc946579854bba40aebe731ebc59e5c, type: 3}
   m_Name: Zombie Wandering Scriptable State
   m_EditorClassIdentifier: 
-  _radius: 2
+  _radius: 5
