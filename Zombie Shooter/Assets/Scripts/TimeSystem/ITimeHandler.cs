@@ -6,6 +6,7 @@ namespace ZombieShooter.TimeSystem
     {
         event Action OnTick;
         event Action<TimeCycle> OnNewCycle;
+        event Action OnRestartCycle;
         string Time { get; }
         TimeCycle CurrentCycle { get; }
         TimeCycle NextCycle { get; }

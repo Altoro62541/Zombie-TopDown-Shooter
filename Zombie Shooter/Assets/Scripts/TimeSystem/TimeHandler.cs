@@ -9,6 +9,7 @@ namespace ZombieShooter.TimeSystem
     {
         public event Action OnTick;
         public event Action<TimeCycle> OnNewCycle;
+        public event Action OnRestartCycle;
         [SerializeField] private TimeSettings _timeSettings;
 
         private int _currentCycleIndex;
@@ -58,6 +59,7 @@ namespace ZombieShooter.TimeSystem
             {
                 _currentCycleIndex = _endCycleIndex;
                 _nextCycleIndex = _startCycleIndex;
+                OnRestartCycle?.Invoke();
             }
 
             else

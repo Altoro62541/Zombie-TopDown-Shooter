@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
-using ZombieShooter.InputSystem;
 using ZombieShooter.TimeSystem;
 
 namespace ZombieShooter.Installers.TimeSystem
