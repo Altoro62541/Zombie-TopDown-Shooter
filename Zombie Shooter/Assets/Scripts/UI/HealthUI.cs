@@ -21,7 +21,7 @@ namespace ZombieShooter.UI
         }
         private void OnDisable()
         {
-            _disposable.Dispose();
+          //  _disposable.Dispose();
         }
 
     }
