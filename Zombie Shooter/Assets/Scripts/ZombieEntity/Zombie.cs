@@ -4,10 +4,12 @@ using ZombieShooter.HealthSystem;
 using ZombieShooter.PlayerEntity;
 using ZombieShooter.ZombieEntity.SO;
 using System;
+using ZombieShooter.AI.ZombieAI;
 namespace ZombieShooter.ZombieEntity
 {
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent(typeof(Despawn))]
+    [RequireComponent(typeof(ZombieAI))]
     public class Zombie : MonoBehaviour, IZombie
     {
         [Inject] private IPlayer _player;
