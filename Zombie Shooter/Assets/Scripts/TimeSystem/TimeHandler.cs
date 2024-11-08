@@ -29,7 +29,7 @@ namespace ZombieShooter.TimeSystem
         public TimeCycle CurrentCycle => _currentCycle;
         public TimeCycle NextCycle => _nextCycle;
 
-        public bool IsLastCurrentCycle => _currentCycleIndex >= _maxCycle;
+        public bool IsLastCurrentCycle => _nextCycleIndex == _startCycleIndex;
 
         private void Awake()
         {
@@ -57,9 +57,9 @@ namespace ZombieShooter.TimeSystem
         private void TurnNextCycle ()
         {
             _currentCycleIndex = Mathf.Clamp(_currentCycleIndex + 1, 0, _maxCycle);
-            if (_currentCycleIndex >= _maxCycle)
+            if (_currentCycleIndex == _endCycleIndex)
             {
-                _currentCycleIndex = _endCycleIndex;
+                _currentCycleIndex = _startCycleIndex;
                 _nextCycleIndex = _startCycleIndex;
                 OnRestartCycle?.Invoke();
             }
@@ -68,6 +68,7 @@ namespace ZombieShooter.TimeSystem
             {
                 _nextCycleIndex = _currentCycleIndex + 1;
             }
+
             _currentCycle = _timeSettings.GetCycle(_currentCycleIndex);
             _nextCycle = _timeSettings.GetCycle(_nextCycleIndex);
             OnNewCycle?.Invoke(_nextCycle);

@@ -26,7 +26,7 @@ namespace ZombieShooter.VFX
             _light.intensity = _timeHandler.IsLastCurrentCycle ? _defaultIntensity : 0;
         }
 
-        private void OnNewCycle(TimeCycle obj)
+        private void OnNewCycle(TimeCycle cycle)
         {
             float targetValue = _timeHandler.IsLastCurrentCycle ? _defaultIntensity : 0;
             _light.DOIntensity(targetValue, _config.SpeedFade);
