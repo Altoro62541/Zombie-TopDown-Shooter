@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZombieShooter.HealthSystem;
+﻿using ZombieShooter.HealthSystem;
 
 namespace ZombieShooter.PlayerEntity
 {
-    public interface IPlayer
+    public interface IPlayer : IPositionable
     {
         IHealthComponent HeathComponent { get; }
+        
     }
 }

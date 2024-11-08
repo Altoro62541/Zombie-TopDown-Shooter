@@ -153,9 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombie: {fileID: 847817596894608644, guid: 431d6077c32b7f9438f134120da2b6d8, type: 3}
   _tilemap: {fileID: 297429535}
-  _obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   _player: {fileID: 3842467695732380090, guid: 67d9d90215e6bcd45830cbc88e62fd8d, type: 3}
   _spawnRadius: 2
 --- !u!4 &40192751
@@ -308,6 +305,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 2028510170}
+  - {fileID: 1326323665}
   - {fileID: 1291682582}
   - {fileID: 1598212105}
   _installerPrefabs: []
@@ -341,6 +339,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2028510171}
+  - {fileID: 1326323666}
   - {fileID: 1291682583}
   - {fileID: 1598212106}
   m_Father: {fileID: 0}
@@ -503,6 +502,7 @@ GameObject:
   - component: {fileID: 297429533}
   - component: {fileID: 297429535}
   - component: {fileID: 297429534}
+  - component: {fileID: 297429536}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -25936,6 +25936,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &297429536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297429532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6dfc8448834fbb438781feaa337bc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &414082026
 GameObject:
   m_ObjectHideFlags: 0
@@ -29482,6 +29497,51 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291682581}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 137609538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1326323664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326323666}
+  - component: {fileID: 1326323665}
+  m_Layer: 0
+  m_Name: WorldInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1326323665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326323664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c095a0ed7f2bcf45ba04519e1a4da4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _world: {fileID: 297429536}
+--- !u!4 &1326323666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326323664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}

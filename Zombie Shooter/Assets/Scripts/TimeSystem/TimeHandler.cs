@@ -80,10 +80,7 @@ namespace ZombieShooter.TimeSystem
                 if (_currentTime.Hour == _nextCycle.Hour)
                 {
                     TurnNextCycle();
-
                 }
-
-                Debug.Log(Time);
             }
         }
     }
