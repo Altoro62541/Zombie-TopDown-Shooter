@@ -1,20 +1,22 @@
 using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Zenject;
 using ZombieShooter.Factories;
+using ZombieShooter.PlayerEntity;
+using ZombieShooter.Spawn.SO;
 using ZombieShooter.ZombieEntity;
 
 namespace ZombieShooter.Spawn
 {
-    public class ZombieSpawn : MonoBehaviour
+    public class ZombieSpawner : MonoBehaviour
     {
         [Inject] private IZombieFactory _factory;
         [Inject] private IWorld _world;
+        [Inject] private IPlayer _player;
         [SerializeField] private Zombie _zombie;
-        [SerializeField] private Tilemap _tilemap;
-        [SerializeField] private Transform _player; 
-        [SerializeField] private float _spawnRadius = 5f; 
+        [SerializeField] private ZombieSpawnSettings _spawnSettings;
         public void Start()
         {
             Spawning().Forget();
@@ -23,9 +25,10 @@ namespace ZombieShooter.Spawn
         {
             while (true)
             {
-                await UniTask.Delay(3000); 
+                TimeSpan timeSpan = TimeSpan.FromSeconds(_spawnSettings.RandomTimeSpawn);
+                await UniTask.Delay(timeSpan); 
 
-                Vector3 position = _world.GetRandomTilePosition();
+                Vector3 position = _world.GetRandomTilePosition(_player.Position, _spawnSettings.SpawnRadius);
 
                 if (position != Vector3.zero)
                 {
