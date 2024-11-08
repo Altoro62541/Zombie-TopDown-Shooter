@@ -47,7 +47,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: $v
       Entry: 7
       Data: 2|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
@@ -86,7 +86,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: $v
       Entry: 7
       Data: 3|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
@@ -125,7 +125,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: $v
       Entry: 7
       Data: 4|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
@@ -164,7 +164,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 4
+      Data: 3
     - Name: $v
       Entry: 7
       Data: 5|ZombieShooter.TimeSystem.TimeCycle, Assembly-CSharp
