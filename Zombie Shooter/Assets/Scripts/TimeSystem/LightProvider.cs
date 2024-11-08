@@ -10,11 +10,23 @@ namespace ZombieShooter.TimeSystem
     public class LightProvider : MonoBehaviour, ILightProvider
     {
         [SerializeField] private Light2D _light;
+        private Sequence _curreentSequence;
 
         public void TurnCycle(Color color, float intensity, float speed)
         {
-            _light.DOColor(color, speed);
-            _light.DOIntensity(intensity, speed);
+            if (speed > 0)
+            {
+                _curreentSequence?.Kill();
+                _curreentSequence = DOTween.Sequence();
+                _curreentSequence.Append(_light.DOColor(color, speed));
+                _curreentSequence.Join(_light.DOIntensity(intensity, speed));
+                _curreentSequence.Play();
+            }
+            else
+            {
+                _light.intensity = intensity;
+                _light.color = color;
+            }
         }
 
         private void OnValidate()

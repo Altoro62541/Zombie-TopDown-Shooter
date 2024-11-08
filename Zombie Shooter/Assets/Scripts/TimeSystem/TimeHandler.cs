@@ -43,38 +43,32 @@ namespace ZombieShooter.TimeSystem
             var allCycles = (TimeCycleType[])Enum.GetValues(typeof(TimeCycleType));
 
             _maxCycle = allCycles.Length;
-            _startCycleIndex = (int)allCycles[0];
-            _endCycleIndex = allCycles.IndexOf(TimeCycleType.Night) + 1;
+            _startCycleIndex = allCycles.IndexOf(TimeCycleType.Morming);
+            _endCycleIndex = allCycles.IndexOf(TimeCycleType.Night);
             _currentCycleIndex = _startCycleIndex;
             _currentTime = new();
             _currentCycle = _timeSettings.GetCycle(_currentCycleIndex);
             _currentTime = _currentTime.AddHours(_currentCycle.Hour);
             _tick = TimeSpan.FromSeconds(_timeSettings.TickMinutes);
-            _nextCycleIndex = Mathf.Clamp(_currentCycleIndex + 1, 0, _maxCycle);
+            _nextCycleIndex = _currentCycleIndex + 1;
             _nextCycle = _timeSettings.GetCycle(_nextCycleIndex);
         }
 
-        private void TurnNextCycle ()
+        private void TurnNextCycle()
         {
-            _currentCycleIndex = Mathf.Clamp(_currentCycleIndex + 1, 0, _maxCycle);
+            _currentCycleIndex = (_currentCycleIndex + 1) % (_endCycleIndex + 1); // Cycle wrapping
+
             if (_currentCycleIndex == _endCycleIndex)
             {
-                _currentCycleIndex = _startCycleIndex;
-                _nextCycleIndex = _startCycleIndex;
                 OnRestartCycle?.Invoke();
             }
-
-            else
-            {
-                _nextCycleIndex = _currentCycleIndex + 1;
-            }
-
+            _nextCycleIndex = (_currentCycleIndex + 1) % (_endCycleIndex + 1); // Cycle wrapping
             _currentCycle = _timeSettings.GetCycle(_currentCycleIndex);
             _nextCycle = _timeSettings.GetCycle(_nextCycleIndex);
             OnNewCycle?.Invoke(_nextCycle);
         }
 
-        private async UniTask Ticking ()
+        private async UniTask Ticking()
         {
             while (true)
             {
