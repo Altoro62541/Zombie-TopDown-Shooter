@@ -12,6 +12,7 @@ namespace ZombieShooter.ZombieEntity
     [RequireComponent(typeof(Despawn))]
     [RequireComponent(typeof(ZombieAI))]
     [RequireComponent (typeof(ZombieStateMachine))]
+    [RequireComponent(typeof (ZombieRotation))]
     public class Zombie : MonoBehaviour, IZombie
     {
         [Inject] private IPlayer _player;

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dba41ed7759f94890d2ee42df487ad, type: 3}
-  m_Name: BaseZombieStateContainer
+  m_Script: {fileID: 11500000, guid: 88af9e07aed502444ada250c723372d9, type: 3}
+  m_Name: Nav Mesh Agent Config
   m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
-  _states:
-  - {fileID: 11400000, guid: e3fa5f8ee0a4d204390751ba92f56f57, type: 2}
-  - {fileID: 11400000, guid: 6cfa5903240ab7f40850f856b4bc0696, type: 2}
+  _stopDistance: 0.1
+  _stopMagnitude: 0.15
+  _angularSpeed: 3.4028235e+38
+  _acceleration: 3.4028235e+38
+  _updateRotatiion: 0

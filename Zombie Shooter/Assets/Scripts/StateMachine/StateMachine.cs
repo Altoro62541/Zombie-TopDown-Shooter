@@ -89,8 +89,6 @@ namespace ZombieShooter.States
             Current.Enter();;
             OnStateChanged?.Invoke(Current);
 
-            Debug.Log($"StateMachine {gameObject.name} new State {stateType.Name}");
-
         }
 
         public virtual void SetStateByDefault ()

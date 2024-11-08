@@ -39,11 +39,7 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
             await UniTask.Delay(timeSpan);
 
-            // Получаем случайную точку для блуждания
-            Vector2 randomPoint = Random.insideUnitCircle * 5; // Предполагается, что у вас есть WanderingRadius в вашем классе Zombie
-            Vector3 targetPosition = new Vector3(randomPoint.x, 0, randomPoint.y) + Target.transform.position; // Предполагается, что у вас есть Position в вашем классе Zombie
-
-            Target.AI.MoveTo(targetPosition);
+            Target.StateMachine.TurnWandering();
         }
 
 

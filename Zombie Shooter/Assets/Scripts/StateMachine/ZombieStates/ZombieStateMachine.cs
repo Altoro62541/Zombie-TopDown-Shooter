@@ -9,12 +9,12 @@ namespace ZombieShooter.StateMachine.ZombieStates
     {
         public void TurnIdle()
         {
-            throw new System.NotImplementedException();
+            SetState<ZombieIdleState>();
         }
 
         public void TurnWandering()
         {
-            throw new System.NotImplementedException();
+            SetState<ZombieWanderingState>();
         }
     }
 }

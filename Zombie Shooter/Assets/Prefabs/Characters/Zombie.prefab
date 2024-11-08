@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5002680440782346354}
   - component: {fileID: 1465726982262047923}
   - component: {fileID: 1826304999713001787}
+  - component: {fileID: 983751647813037441}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -205,8 +206,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1817875535907044695}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 0.3
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -217,7 +218,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &1465726982262047923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea238c6a1a9cf2b4ab7b3f83ff40322a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 21a8e7b25f7299447ab080c4cc7bfc9e, type: 2}
 --- !u!114 &1826304999713001787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +245,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 11400000, guid: 249d2050aaaaf02469e4af6feee0267a, type: 2}
+--- !u!114 &983751647813037441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817875535907044695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4b7108eb8371340a7ee6e6fec62e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
