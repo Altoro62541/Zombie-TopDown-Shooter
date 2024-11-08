@@ -29,6 +29,8 @@ namespace ZombieShooter.TimeSystem
         public TimeCycle CurrentCycle => _currentCycle;
         public TimeCycle NextCycle => _nextCycle;
 
+        public bool IsLastCurrentCycle => _currentCycleIndex >= _maxCycle;
+
         private void Awake()
         {
             Initialize();
