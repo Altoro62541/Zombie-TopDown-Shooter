@@ -1,7 +1,8 @@
 using Sirenix.OdinInspector;
-using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Zenject;
+using ZombieShooter.Extensions;
 using ZombieShooter.InputSystem;
 namespace ZombieShooter.PlayerEntity
 {
@@ -12,6 +13,7 @@ namespace ZombieShooter.PlayerEntity
         private bool _isMoving = false;
         private Vector2 _targetPosition;
         [Inject] private IInputEventHandler _inputEventHandler;
+        [Inject] private EventSystem _eventSystem;
 
         public bool IsMoving => _isMoving;
 
@@ -21,7 +23,7 @@ namespace ZombieShooter.PlayerEntity
         }
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !_eventSystem.IsPointerOverUIObject())
             {
                 _targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 _isMoving = true;

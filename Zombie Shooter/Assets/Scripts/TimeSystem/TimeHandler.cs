@@ -9,6 +9,7 @@ namespace ZombieShooter.TimeSystem
     {
         public event Action OnTick;
         public event Action<TimeCycle> OnNewCycle;
+        public event Action OnRestartCycle;
         [SerializeField] private TimeSettings _timeSettings;
 
         private int _currentCycleIndex;
@@ -17,7 +18,7 @@ namespace ZombieShooter.TimeSystem
         private int _startCycleIndex;
         private int _endCycleIndex;
 
-        private DateTime _currentTime;
+        public DateTime _currentTime;
         private TimeSpan _tick;
 
         private TimeCycle _currentCycle;
@@ -27,6 +28,8 @@ namespace ZombieShooter.TimeSystem
 
         public TimeCycle CurrentCycle => _currentCycle;
         public TimeCycle NextCycle => _nextCycle;
+
+        public bool IsLastCurrentCycle => _nextCycleIndex == _startCycleIndex;
 
         private void Awake()
         {
@@ -54,16 +57,18 @@ namespace ZombieShooter.TimeSystem
         private void TurnNextCycle ()
         {
             _currentCycleIndex = Mathf.Clamp(_currentCycleIndex + 1, 0, _maxCycle);
-            if (_currentCycleIndex >= _maxCycle)
+            if (_currentCycleIndex == _endCycleIndex)
             {
-                _currentCycleIndex = _endCycleIndex;
+                _currentCycleIndex = _startCycleIndex;
                 _nextCycleIndex = _startCycleIndex;
+                OnRestartCycle?.Invoke();
             }
 
             else
             {
                 _nextCycleIndex = _currentCycleIndex + 1;
             }
+
             _currentCycle = _timeSettings.GetCycle(_currentCycleIndex);
             _nextCycle = _timeSettings.GetCycle(_nextCycleIndex);
             OnNewCycle?.Invoke(_nextCycle);
@@ -80,10 +85,7 @@ namespace ZombieShooter.TimeSystem
                 if (_currentTime.Hour == _nextCycle.Hour)
                 {
                     TurnNextCycle();
-
                 }
-
-                Debug.Log(Time);
             }
         }
     }
