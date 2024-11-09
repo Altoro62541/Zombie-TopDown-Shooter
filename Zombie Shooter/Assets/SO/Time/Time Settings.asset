@@ -149,7 +149,7 @@ MonoBehaviour:
       Data: 
     - Name: _intensity
       Entry: 4
-      Data: 0.61
+      Data: 0.51
     - Name: _hour
       Entry: 4
       Data: 16
@@ -188,7 +188,7 @@ MonoBehaviour:
       Data: 
     - Name: _intensity
       Entry: 4
-      Data: 0.5
+      Data: 0.001
     - Name: _hour
       Entry: 4
       Data: 0

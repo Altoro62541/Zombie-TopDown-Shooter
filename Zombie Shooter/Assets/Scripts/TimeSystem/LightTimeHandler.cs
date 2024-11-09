@@ -23,23 +23,23 @@ namespace ZombieShooter.TimeSystem
             var currentCycleStart = _timeHandler.CurrentCycle.StartTime;
             var nextCycleStart = _timeHandler.NextCycle.StartTime;
 
-            // Вычисляем продолжительность между циклами
-            TimeSpan duration = currentCycleStart - nextCycleStart;
-
-            // Получаем количество игровых минут
-            double durationInMinutes = duration.TotalMinutes;
-
-            // Рассчитываем скорость с учетом тик-минут и минут на тик
-            float speed = ((float)(durationInMinutes) / (_timeSettings.MinutesPerTick / _timeSettings.TickMinutes));
-
-            if (speed < 0)
+            if (nextCycleStart < currentCycleStart)
             {
-                speed *= -1;
+                nextCycleStart = nextCycleStart.AddDays(1);
             }
 
-            _lightProvider.TurnCycle(timeCycle.Color, timeCycle.Intensity, speed);
-        }
+            var span = nextCycleStart - currentCycleStart;
+            int totalSeconds = (int)span.TotalSeconds;
+            float tickDurationInSeconds = _timeSettings.MinutesPerTick * 60 / _timeSettings.TickMinutes;
 
+            float tickCount = totalSeconds / tickDurationInSeconds;
+
+            if (tickCount < 0)
+            {
+                tickCount *= -1;
+            }
+            _lightProvider.TurnCycle(timeCycle.Color, timeCycle.Intensity, tickCount);
+        }
 
         private void OnEnable()
         {
