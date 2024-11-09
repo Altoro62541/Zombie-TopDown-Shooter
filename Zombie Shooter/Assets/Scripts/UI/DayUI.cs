@@ -13,11 +13,14 @@ namespace ZombieShooter.TimeSystem
     {
         _timeText = GetComponent<TextMeshProUGUI>();
         UpdateText();
-
-        _dayHandler.OnNewDay += UpdateText; 
     }
 
-    private void OnDestroy()
+        private void OnEnable()
+        {
+            _dayHandler.OnNewDay += UpdateText;
+        }
+
+        private void OnDestroy()
     {
         _dayHandler.OnNewDay -= UpdateText; 
     }

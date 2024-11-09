@@ -7,6 +7,6 @@ public class HungrySlider : StatsSlider
 {
     [Inject] private IPlayerStatsHandler _playerStatsHandler;
 
-    protected override ReactiveProperty<float> Stat => _playerStatsHandler.Stats.Hungry;
+    protected override FloatReactiveProperty Stat => _playerStatsHandler.Stats.Hungry;
    
 }

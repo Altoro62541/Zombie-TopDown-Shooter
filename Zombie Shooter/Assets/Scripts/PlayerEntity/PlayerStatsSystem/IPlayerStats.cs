@@ -5,10 +5,10 @@ namespace ZombieShooter.PlayerEntity.PlayerStatsSystem
 {
     public interface IPlayerStats
     {
-        public ReactiveProperty<float> Hungry { get; }
-        public ReactiveProperty<float> Sleep { get; }
-        public ReactiveProperty<float> Reason { get; }
-        public ReactiveProperty<float> Thirst { get; }
-        public ReactiveProperty<float> Warm { get; }
+        public FloatReactiveProperty Hungry { get; }
+        public FloatReactiveProperty Sleep { get; }
+        public FloatReactiveProperty Mentai { get; }
+        public FloatReactiveProperty Thirst { get; }
+        public FloatReactiveProperty Warm { get; }
     }
 }

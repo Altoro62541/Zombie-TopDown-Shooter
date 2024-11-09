@@ -10,7 +10,7 @@ namespace ZombieShooter.UI
     {
         [Inject] IPlayer player;
         private Slider _slider;
-        private CompositeDisposable _disposable = new CompositeDisposable();
+        private CompositeDisposable _disposable = new();
 
         private void Start()
         {
@@ -21,7 +21,7 @@ namespace ZombieShooter.UI
         }
         private void OnDisable()
         {
-          //  _disposable.Dispose();
+           _disposable.Clear();
         }
 
     }
