@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Zenject;
 using ZombieShooter.Configs;
@@ -12,8 +14,10 @@ namespace ZombieShooter.VFX
     {
         private float _defaultIntensity;
         private Light2D _light;
+        private Tween _tween;
         [SerializeField] private LightPlayerVFXConfig _config;
-        [Inject] private ITimeHandler _timeHandler;
+        [Inject] private ILightProvider _lightProvider;
+
 
         private void Awake()
         {
@@ -23,23 +27,19 @@ namespace ZombieShooter.VFX
 
         private void Start()
         {
-            _light.intensity = _timeHandler.IsLastCurrentCycle ? _defaultIntensity : 0;
+            _light.intensity = _lightProvider.CurrentIntensity <= _config.TargrtIntensity ? _defaultIntensity : 0;
+            ObserveIntensity().Forget();
         }
 
-        private void OnNewCycle(TimeCycle cycle)
+        private async UniTask ObserveIntensity ()
         {
-            float targetValue = _timeHandler.IsLastCurrentCycle ? _defaultIntensity : 0;
-            _light.DOIntensity(targetValue, _config.SpeedFade);
-        }
-
-        private void OnEnable()
-        {
-            _timeHandler.OnNewCycle += OnNewCycle;
-        }
-
-        private void OnDisable()
-        {
-            _timeHandler.OnNewCycle -= OnNewCycle;
+            while (_light != null)
+            {
+                await UniTask.WaitForEndOfFrame(this);
+                float targetValue = _lightProvider.CurrentIntensity <= _config.TargrtIntensity ? _defaultIntensity : 0;
+                _tween?.Kill();
+                _tween = _light.DOIntensity(targetValue, _config.SpeedFade);
+            }
         }
     }
 }

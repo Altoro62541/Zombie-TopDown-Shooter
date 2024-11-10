@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using ZombieShooter.Helpers;
+using ZombieShooter.PlayerEntity;
 using ZombieShooter.States;
 using ZombieShooter.ZombieEntity;
 using Random = UnityEngine.Random;
@@ -32,6 +34,12 @@ namespace ZombieShooter.StateMachine.ZombieStates
             {
                 Target.StateMachine.TurnIdle();
             }
+            if (ZombieVisionHelper.TryGetPlayerInSphere(Target.Position, Vector3.one, Target.Data.VisionRadius, out IPlayer player))
+            {
+                Target.StateMachine.TurnMoveToPlayer(player);
+            }
+
+
         }
     }
 }

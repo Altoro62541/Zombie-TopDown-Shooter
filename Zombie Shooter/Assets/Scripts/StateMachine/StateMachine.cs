@@ -185,12 +185,12 @@ namespace ZombieShooter.States
             }
             if (Current is ICollisionState collisionState)
             {
-                collisionState.CollisionExit(collision).Forget();
+                collisionState.CollisionExit(collision);
             }
 
             else if (Current is ICollisionExitState collisionExitState)
             {
-                collisionExitState.CollisionExit(collision).Forget();
+                collisionExitState.CollisionExit(collision);
             }
         }
     }

@@ -6,8 +6,8 @@ namespace ZombieShooter.HealthSystem
 {
     public class HealthComponent : MonoBehaviour, IHealthComponent
     {
-        [SerializeField] private ReactiveProperty<float> _health = new();
-        [SerializeField] private ReactiveProperty<float> _maxHealth = new();
+        [SerializeField] private FloatReactiveProperty _health = new();
+        [SerializeField] private FloatReactiveProperty _maxHealth = new();
         public Subject<object> OnHit = new Subject<object>();
 
         public IReadOnlyReactiveProperty<float> Health => _health;

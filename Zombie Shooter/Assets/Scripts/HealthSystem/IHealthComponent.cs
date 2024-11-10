@@ -1,4 +1,5 @@
 ﻿using UniRx;
+using ZombieShooter.ZombieEntity;
 
 namespace ZombieShooter.HealthSystem
 {

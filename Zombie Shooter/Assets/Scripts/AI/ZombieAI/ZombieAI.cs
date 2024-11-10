@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using ZombieShooter.Configs;
+using ZombieShooter.ZombieEntity;
 
 namespace ZombieShooter.AI.ZombieAI
 {
@@ -10,6 +11,7 @@ namespace ZombieShooter.AI.ZombieAI
     {
         private NavMeshAgent _agent;
         [SerializeField] private NavMeshAgentConfig _config;
+        private IZombie _mainComponent;
 
         public bool IsEndingMove
         {
@@ -24,23 +26,35 @@ namespace ZombieShooter.AI.ZombieAI
 
         private void Awake()
         {
+            _mainComponent = GetComponent<IZombie>();
             _agent = GetComponent<NavMeshAgent>();
+        }
+
+        private void Start()
+        {
             _agent.updateRotation = false;
             _agent.updateUpAxis = false;
             _agent.stoppingDistance = _config.StopDistance;
             _agent.acceleration = _config.Acceleration;
             _agent.updateRotation = _config.UpdateRotatiion;
             _agent.angularSpeed = _config.AngularSpeed;
+            _agent.speed = _mainComponent.Data.SpeedMove;
         }
 
         public void MoveTo(Vector3 point)
         {
+            _agent.isStopped = false;
             _agent.SetDestination(point);
         }
 
         public void MoveTo(Transform transform)
         {
             MoveTo(transform.position);
+        }
+
+        public void Stop ()
+        {
+            _agent.isStopped = true;
         }
 
 

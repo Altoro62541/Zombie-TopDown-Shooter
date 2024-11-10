@@ -7,7 +7,10 @@ namespace ZombieShooter.Configs
     public class LightPlayerVFXConfig : ScriptableObject
     {
         [SerializeField, MinValue(0)] private float _speedFade = 0.5f;
+        [SerializeField, MinValue(0)] private float _targrtIntensity = 0.3f;
 
         public float SpeedFade => _speedFade;
+
+        public float TargrtIntensity => _targrtIntensity;
     }
 }

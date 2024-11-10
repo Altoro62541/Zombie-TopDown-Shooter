@@ -5,6 +5,7 @@
         Morming,
         Day,
         Evening,
-        Night
+        Night,
+        FullNight,
     }
 }

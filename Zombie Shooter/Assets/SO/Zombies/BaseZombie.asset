@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: BaseZombie
   m_EditorClassIdentifier: 
   _health: 5
-  _speedMove: 4
+  _damage: 8.38
+  _speedMove: 0.44
+  _speedAttack: 2
+  _ditanceAggresive: 7
+  _visionRadius: 1.2

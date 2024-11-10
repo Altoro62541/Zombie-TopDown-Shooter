@@ -28,7 +28,7 @@ namespace ZombieShooter.States
             {
                 var parentStates = _parent.GetStates(owner);
 
-                states = states.Concat(parentStates).ToList();
+                states = parentStates.Concat(states).ToList();
             }
 
             return states;

@@ -16,10 +16,12 @@ namespace ZombieShooter.TimeSystem
             OnNewDay?.Invoke();
             Debug.Log($"New Day: day {CurrentDay}");
         }
+
         private void OnEnable()
         {
             _timeHandler.OnRestartCycle += IncrementDay;
         }
+
         private void OnDisable()
         {
             _timeHandler.OnRestartCycle -= IncrementDay;

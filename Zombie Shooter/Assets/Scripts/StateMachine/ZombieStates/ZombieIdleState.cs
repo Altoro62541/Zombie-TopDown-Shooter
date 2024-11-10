@@ -3,16 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using ZombieShooter.Helpers;
+using ZombieShooter.PlayerEntity;
 using ZombieShooter.States;
 using ZombieShooter.ZombieEntity;
 using Random = UnityEngine.Random;
 
 namespace ZombieShooter.StateMachine.ZombieStates
 {
-    public class ZombieIdleState : EntityState<Zombie>
+    public class ZombieIdleState : EntityState<Zombie>, IFixedUpdatableState
     {
+        CancellationTokenSource _cancellationTokenSource = new();
         private AnimationCurve _wanderingCurve;
         public ZombieIdleState(Zombie target, AnimationCurve startWanderingCurve) : base(target)
         {
@@ -21,11 +25,22 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
+            Target.AI.Stop();
+            _cancellationTokenSource = new();
             TurnWanderingDelay();
         }
 
         public override void Exit()
         {
+            _cancellationTokenSource?.Cancel();
+        }
+
+        public void OnFixedUpdate()
+        {
+            if (ZombieVisionHelper.TryGetPlayerInSphere(Target.Position, Target.transform.forward, Target.Data.VisionRadius, out IPlayer player))
+            {
+                Target.StateMachine.TurnMoveToPlayer(player);
+            }
         }
 
         private async void TurnWanderingDelay()
@@ -37,7 +52,7 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
             TimeSpan timeSpan = TimeSpan.FromSeconds(time);
 
-            await UniTask.Delay(timeSpan);
+            await UniTask.Delay(timeSpan, cancellationToken: _cancellationTokenSource.Token);
 
             Target.StateMachine.TurnWandering();
         }

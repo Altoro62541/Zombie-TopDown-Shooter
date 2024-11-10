@@ -1,9 +1,10 @@
 using TMPro;
 using UnityEngine;
 using Zenject;
-using ZombieShooter.TimeSystem;
 
-public class TimeUI : MonoBehaviour
+namespace ZombieShooter.TimeSystem
+{
+    public class TimeUI : MonoBehaviour
 {
     [Inject] private ITimeHandler _timeHandler;
     private TextMeshProUGUI _timeText;
@@ -26,3 +27,5 @@ public class TimeUI : MonoBehaviour
         _timeText.text = _timeHandler.Time;
     }
 }
+}
+

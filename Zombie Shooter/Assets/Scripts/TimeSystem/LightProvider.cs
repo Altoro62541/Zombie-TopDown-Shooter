@@ -12,6 +12,8 @@ namespace ZombieShooter.TimeSystem
         [SerializeField] private Light2D _light;
         private Sequence _curreentSequence;
 
+        public float CurrentIntensity => _light.intensity;
+
         public void TurnCycle(Color color, float intensity, float speed)
         {
             if (speed > 0)
@@ -20,6 +22,7 @@ namespace ZombieShooter.TimeSystem
                 _curreentSequence = DOTween.Sequence();
                 _curreentSequence.Append(_light.DOColor(color, speed));
                 _curreentSequence.Join(_light.DOIntensity(intensity, speed));
+                _curreentSequence.SetEase(Ease.InOutQuad);
                 _curreentSequence.Play();
             }
             else
