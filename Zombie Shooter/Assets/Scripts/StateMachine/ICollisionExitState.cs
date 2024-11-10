@@ -5,6 +5,6 @@ namespace ZombieShooter.States
 {
     public interface ICollisionExitState
     {
-        UniTask CollisionExit(Collision collision);
+        void CollisionExit(Collision collision);
     }
 }

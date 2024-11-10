@@ -1,7 +1,5 @@
-using Zenject;
 using UnityEngine;
 using ZombieShooter.HealthSystem;
-using ZombieShooter.PlayerEntity;
 using ZombieShooter.ZombieEntity.SO;
 using System;
 using ZombieShooter.AI.ZombieAI;
@@ -13,20 +11,28 @@ namespace ZombieShooter.ZombieEntity
     [RequireComponent(typeof(ZombieAI))]
     [RequireComponent (typeof(ZombieStateMachine))]
     [RequireComponent(typeof (ZombieRotation))]
+    [RequireComponent(typeof(ZombiePhysics))]
     public class Zombie : MonoBehaviour, IZombie
     {
-        [Inject] private IPlayer _player;
-
         private HealthComponent _healthComponent;
         private IZombieAI _ai;
         private IZombieStateMachine _stateMachine;
         [SerializeField] private ZombieData _data;
+        private IZombiePhysics _zombiePhysics;
 
         public IHealthComponent HeathComponent => _healthComponent;
 
         public IZombieAI AI => _ai;
 
         public IZombieStateMachine StateMachine => _stateMachine;
+
+        public IZombiePhysics ZombiePhysics => _zombiePhysics;
+
+        public ZombieData Data => _data;
+
+        public Vector3 Position => transform.position;
+
+        public Transform Transform => transform;
 
         private void Awake()
         {
@@ -37,8 +43,15 @@ namespace ZombieShooter.ZombieEntity
             _healthComponent = GetComponent<HealthComponent>();
             _ai = GetComponent<IZombieAI>();
             _stateMachine = GetComponent<IZombieStateMachine>();
+            _zombiePhysics = GetComponent<IZombiePhysics>();
             _healthComponent.SetMaxHealth(_data.Health);
             _healthComponent.SetHealth(_data.Health);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(Position, _data.VisionRadius);
         }
 
     }

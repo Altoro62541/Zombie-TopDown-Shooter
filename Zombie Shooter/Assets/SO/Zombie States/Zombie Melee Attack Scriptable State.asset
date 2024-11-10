@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b05e2043cc46fba4c8a9c845bd491e8a, type: 3}
-  m_Name: BaseZombie
+  m_Script: {fileID: 11500000, guid: 80d678c4ee76bb44f8796d2ff5d8f054, type: 3}
+  m_Name: Zombie Melee Attack Scriptable State
   m_EditorClassIdentifier: 
-  _health: 5
-  _damage: 8.38
-  _speedMove: 0.44
-  _speedAttack: 2
-  _ditanceAggresive: 7
-  _visionRadius: 1.2
