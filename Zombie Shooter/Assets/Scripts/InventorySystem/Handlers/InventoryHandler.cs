@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -20,11 +21,12 @@ namespace ZombieShooter.InventorySystem.Handlers
             _inventory = new();
         }
 
-        public async void Add(AssetReferenceT<ScriptableItem> asset)
+        public async UniTask<Item> Add(AssetReferenceT<ScriptableItem> asset)
         {
             var itemReference = await _itemLoader.LoadScriptableItemAsync<ScriptableItem>(asset);
             Item item = new(itemReference);
             _inventory.Add(item);
+            return item;
         }
 
         public async void Add(IEnumerable<AssetReferenceT<ScriptableItem>> assets)

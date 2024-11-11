@@ -23,12 +23,6 @@ namespace ZombieShooter.PlayerEntity
         }
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0) && !_eventSystem.IsPointerOverUIObject())
-            {
-                _targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                _isMoving = true;
-            }
-
             if (_isMoving)
             {
                 Move(_targetPosition);
@@ -52,6 +46,25 @@ namespace ZombieShooter.PlayerEntity
             {
                 _isMoving = false;
             }
+        }
+
+        private void OnLeftButton()
+        {
+            if (!_eventSystem.IsPointerOverUIObject())
+            {
+                _targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                _isMoving = true;
+            }
+        }
+
+        private void OnEnable()
+        {
+            _inputEventHandler.OnLeftButton += OnLeftButton;
+        }
+
+        private void OnDisable()
+        {
+            _inputEventHandler.OnLeftButton -= OnLeftButton;
         }
     }
 

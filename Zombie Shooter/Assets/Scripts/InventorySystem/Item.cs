@@ -12,6 +12,8 @@ namespace ZombieShooter.InventorySystem
         public string GUID => _guid;
         public string ReferenceGUID => _reference.GUID;
 
+        public ScriptableItem Reference => _reference;
+
         public Item (ScriptableItem scriptableItem)
         {
             _reference = scriptableItem;

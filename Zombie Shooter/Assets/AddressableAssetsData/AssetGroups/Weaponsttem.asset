@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 5b09c20380bb7274aaa0151a368e14aa
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 9c708bb0be211934eaa8c654cc6cc25a
+    m_Address: Pistol
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 890b5acbe2c821b4baca470eb1446a96, type: 2}
   m_SchemaSet:
