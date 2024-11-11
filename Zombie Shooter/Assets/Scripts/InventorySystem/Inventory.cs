@@ -13,8 +13,8 @@ namespace ZombieShooter.InventorySystem
     {
         private List<Item> _items;
 
-        private Subject<Item> OnAdd;
-        private Subject<Item> OnRemove;
+        private Subject<Item> OnAdd = new();
+        private Subject<Item> OnRemove = new();
 
         public int Count => _items.Count;
 
@@ -35,7 +35,7 @@ namespace ZombieShooter.InventorySystem
 
             Debug.Log($"added new itwm to inventory {item.ToString()}");
 
-            OnAdd.OnNext(item);
+            OnAdd?.OnNext(item);
         }
 
         public void Add(IEnumerable<Item> items)
@@ -78,7 +78,7 @@ namespace ZombieShooter.InventorySystem
             if (isRemoved)
             {
                 Debug.Log($"removed itwm from inventory {item.ToString()}");
-                OnRemove.OnNext(item);
+                OnRemove?.OnNext(item);
             }
             return isRemoved;
         }
