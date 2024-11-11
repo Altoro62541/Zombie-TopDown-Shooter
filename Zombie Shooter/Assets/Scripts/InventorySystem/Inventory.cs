@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UniRx;
 using UnityEngine;
 
 namespace ZombieShooter.InventorySystem
@@ -11,9 +12,17 @@ namespace ZombieShooter.InventorySystem
     public class Inventory : ICollection<Item>, IInventory
     {
         private List<Item> _items;
+
+        private Subject<Item> OnAdd;
+        private Subject<Item> OnRemove;
+
         public int Count => _items.Count;
 
         public bool IsReadOnly => false;
+
+        ISubject<Item> IInventory.OnAdd => OnAdd;
+
+        ISubject<Item> IInventory.OnRemove => OnRemove;
 
         public Inventory()
         {
@@ -25,6 +34,8 @@ namespace ZombieShooter.InventorySystem
             _items.Add(item);
 
             Debug.Log($"added new itwm to inventory {item.ToString()}");
+
+            OnAdd.OnNext(item);
         }
 
         public void Add(IEnumerable<Item> items)
@@ -67,6 +78,7 @@ namespace ZombieShooter.InventorySystem
             if (isRemoved)
             {
                 Debug.Log($"removed itwm from inventory {item.ToString()}");
+                OnRemove.OnNext(item);
             }
             return isRemoved;
         }
