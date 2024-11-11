@@ -22,11 +22,7 @@ namespace ZombieShooter.UI
             _weaponImage = GetComponent<Image>();
             _weaponText = GetComponent<TextMeshProUGUI>();
             _ammoText = GetComponent<TextMeshProUGUI>();
-            
-            _weaponHandler.OnEquip.Subscribe(weapon => {
-                 UpdateView();
-               weapon.OnShoot += UpdateView;
-            }).AddTo(_disposable);
+            UpdateView();
         }
         private void OnEnable()
         {
