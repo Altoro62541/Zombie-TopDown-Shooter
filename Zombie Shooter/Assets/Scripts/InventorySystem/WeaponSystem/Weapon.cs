@@ -11,6 +11,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
         public event Action OnReload;
         public event Action OnReloadFinish;
         public event Action OnShoot;
+        private WeaponSpriteVariant _spriteVariant;
         private Sprite _icon;
         private string _name;
         private string _description;
@@ -37,6 +38,8 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
 
         public string GUID => _guidItem;
 
+        public WeaponSpriteVariant SpriteVariant => _spriteVariant;
+
         public Weapon(Item item)
         {
             if (item.Reference is WeaponItem weaponItem == false)
@@ -47,7 +50,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             {
                 throw new ArgumentNullException(nameof(weaponItem));
             }
-
+            _spriteVariant = weaponItem.SpriteVariant;
             _icon = weaponItem.Icon;
             _name = weaponItem.Name;
             _description = weaponItem.Description;
@@ -68,6 +71,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
                 throw new ArgumentNullException(nameof(weaponItem));
             }
 
+            _spriteVariant = weaponItem.SpriteVariant;
             _icon = weaponItem.Icon;
             _name = weaponItem.Name;
             _description = weaponItem.Description;
@@ -87,6 +91,8 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             {
                 return;
             }
+
+            Reload().Forget();
         }
 
         public void Shoot()
@@ -99,6 +105,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
 
         private async UniTask Reload ()
         {
+            OnReload?.Invoke();
             TimeSpan span = TimeSpan.FromSeconds(_speedReload);
             await UniTask.Delay(span);
             _currentAmmunition = _ammunitionBank;

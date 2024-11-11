@@ -1,11 +1,13 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
+using ZombieShooter.InventorySystem.WeaponSystem;
 
 namespace ZombieShooter.InventorySystem.SO
 {
     [CreateAssetMenu(menuName = "Inventory/Items/Weapon")]
     public class WeaponItem : ScriptableItem
     {
+        [SerializeField] private WeaponSpriteVariant _spriteVariant;
         [SerializeField, MinValue(1)] private int ammunition = 10;
         [SerializeField, MinValue(0)] private float _speedShoot;
         [SerializeField, MinValue(0.1f)] private float _speedReload = 0.5f;
@@ -21,6 +23,8 @@ namespace ZombieShooter.InventorySystem.SO
         public float Strength => _strength;
         public float LowStrengthPerShoot => _lowStrengthPerShoot;
         public float Damage => _damage;
+
+        public WeaponSpriteVariant SpriteVariant => _spriteVariant;
 
         public override bool TryStack()
         {

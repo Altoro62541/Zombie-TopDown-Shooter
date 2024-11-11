@@ -12,5 +12,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01c949e43b1ca5418d4b9411dda90a2, type: 3}
   m_Name: Survivor
   m_EditorClassIdentifier: 
-  _health: 0
-  _speedMove: 0
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: d78a7febe2aec404b85eacf143a9888e, type: 3}
+    - {fileID: 21300000, guid: c8db6723d3ab6134e928d8a19ceff4f5, type: 3}
+    - {fileID: 21300000, guid: fed9dc8947da1e247a939b1152657da3, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _statesWeapon
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[ZombieShooter.InventorySystem.WeaponSystem.WeaponSpriteVariant,
+        Assembly-CSharp],[ZombieShooter.PlayerEntity.Models.PlayerDataShootState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ZombieShooter.InventorySystem.WeaponSystem.WeaponSpriteVariant,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|ZombieShooter.PlayerEntity.Models.PlayerDataShootState, Assembly-CSharp
+    - Name: _active
+      Entry: 10
+      Data: 0
+    - Name: _reloading
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|ZombieShooter.PlayerEntity.Models.PlayerDataShootState, Assembly-CSharp
+    - Name: _active
+      Entry: 10
+      Data: 2
+    - Name: _reloading
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _health: 100
+  _speedMove: 4.25
+  _noHaveWeaponSprite: {fileID: 21300000, guid: 80168fc476564ee47af59e8467922d63, type: 3}

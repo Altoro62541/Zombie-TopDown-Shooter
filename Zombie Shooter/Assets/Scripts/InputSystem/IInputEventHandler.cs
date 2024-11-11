@@ -7,5 +7,6 @@ namespace ZombieShooter.InputSystem
     {
         event Action OnLeftButton;
         event Action OnRightButton;
+        event Action OnReloadButton;
     }
 }

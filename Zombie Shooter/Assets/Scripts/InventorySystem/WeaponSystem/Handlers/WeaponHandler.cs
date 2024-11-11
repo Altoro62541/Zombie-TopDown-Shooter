@@ -44,18 +44,23 @@ namespace ZombieShooter.InventorySystem.WeaponSystem.Handlers
         private void Shoot()
         {
             _activeWeapon?.Shoot();
+        }
 
-
+        private void Reload()
+        {
+            _activeWeapon?.TurnReload();
         }
 
         private void OnEnable()
         {
             _input.OnRightButton += Shoot;
+            _input.OnReloadButton += Reload;
         }
 
         private void OnDisable()
         {
             _input.OnRightButton -= Shoot;
+            _input.OnReloadButton -= Reload;
         }
     }
 }

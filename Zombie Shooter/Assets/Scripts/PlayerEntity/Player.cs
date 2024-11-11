@@ -6,6 +6,7 @@ namespace ZombieShooter.PlayerEntity
     [RequireComponent(typeof(PlayerRotation))]
     [RequireComponent(typeof(PlayerMovement))]
     [RequireComponent(typeof(HealthComponent))]
+    [RequireComponent (typeof(PlayerSpriteHandler))]
     public class Player : MonoBehaviour, IPlayer
     {
         private HealthComponent _healthComponent;
@@ -18,6 +19,8 @@ namespace ZombieShooter.PlayerEntity
         public Vector3 Position => transform.position;
 
         public Transform Transform => transform;
+
+        public PlayerData Data => _playerData;
 
         private void Awake()
         {
