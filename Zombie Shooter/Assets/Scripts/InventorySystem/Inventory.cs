@@ -33,7 +33,7 @@ namespace ZombieShooter.InventorySystem
         {
             _items.Add(item);
 
-            Debug.Log($"added new itwm to inventory {item.ToString()}");
+            Debug.Log($"added new item to inventory {item.ToString()}");
 
             OnAdd?.OnNext(item);
         }
@@ -77,7 +77,7 @@ namespace ZombieShooter.InventorySystem
 
             if (isRemoved)
             {
-                Debug.Log($"removed itwm from inventory {item.ToString()}");
+                Debug.Log($"removed item from inventory {item.ToString()}");
                 OnRemove?.OnNext(item);
             }
             return isRemoved;
