@@ -9,6 +9,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
         event Action OnReloadFinish;
         event Action OnShoot;
         WeaponSpriteVariant SpriteVariant { get; }
+        int AmmunitionBank {  get; }
         int CurrentAmmunition { get; }
         public float SpeedShoot { get; }
         public float SpeedReload { get; }
