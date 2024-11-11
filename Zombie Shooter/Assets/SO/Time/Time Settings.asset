@@ -204,5 +204,5 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  _tickMinutes: 1
-  _minutesPerTick: 1
+  _tickMinutes: 0.1
+  _minutesPerTick: 30
