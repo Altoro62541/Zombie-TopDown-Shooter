@@ -7,6 +7,7 @@ namespace ZombieShooter.PlayerEntity
     [RequireComponent(typeof(PlayerMovement))]
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent (typeof(PlayerSpriteHandler))]
+    [RequireComponent(typeof(PlayerShootPoint))]
     public class Player : MonoBehaviour, IPlayer
     {
         private HealthComponent _healthComponent;

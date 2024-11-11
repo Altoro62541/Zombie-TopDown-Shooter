@@ -58,6 +58,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             _strength = weaponItem.Strength;
             _lowStrengthPerShoot = weaponItem.LowStrengthPerShoot;
             _damage = weaponItem.Damage;
+            _ammunitionBank = weaponItem.Ammunition;
             _currentAmmunition = weaponItem.Ammunition;
             _speedReload = weaponItem.SpeedReload;
             _speedShoot = weaponItem.SpeedShoot;
@@ -79,6 +80,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             _strength = weaponItem.Strength;
             _lowStrengthPerShoot = weaponItem.LowStrengthPerShoot;
             _damage = weaponItem.Damage;
+            _ammunitionBank = weaponItem.Ammunition;
             _currentAmmunition = weaponItem.Ammunition;
             _speedReload = weaponItem.SpeedReload;
             _speedShoot = weaponItem.SpeedShoot;
@@ -100,6 +102,7 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             if (_currentAmmunition > 0)
             {
                 _currentAmmunition--;
+                OnShoot?.Invoke();
             }
         }
 
