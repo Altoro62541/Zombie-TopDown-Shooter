@@ -7,7 +7,7 @@ namespace ZombieShooter.InventorySystem.SO
     {
         [SerializeField, MinValue(1)] private float _healing = 5;
         [SerializeField, MinValue(1)] private float _saturation = 15;
-        [SerializeField, , MinValue(1)] private float _suitability = 150;
+        [SerializeField, MinValue(1)] private float _suitability = 150;
 
         public float Healing => _healing;
         public float Saturation => _saturation;
