@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZombieShooter.InventorySystem.Handlers
 {
-    public class InventoryHandler : MonoBehaviour
+    public class InventoryHandler : MonoBehaviour, IInventoryHandler
     {
         
     }
