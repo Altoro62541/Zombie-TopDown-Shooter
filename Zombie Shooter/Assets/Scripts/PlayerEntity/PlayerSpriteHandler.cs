@@ -20,6 +20,7 @@ namespace ZombieShooter.PlayerEntity
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _player = GetComponent<IPlayer>();
+            SetSprite(_player.Data.NoHaveWeaponSprite);
         }
 
         private void OnEquip(IWeapon weapon)
