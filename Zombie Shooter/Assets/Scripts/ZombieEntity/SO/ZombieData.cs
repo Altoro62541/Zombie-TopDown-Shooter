@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZombieShooter.ZombieEntity.SO
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Zombie/New Data")]
     public class ZombieData : ScriptableObject
     {
         [SerializeField, MinValue(1)] private float _health;

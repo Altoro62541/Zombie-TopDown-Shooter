@@ -17,6 +17,8 @@ namespace ZombieShooter.PlayerEntity
 
         public bool IsMoving => _isMoving;
 
+        public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
+
         private void Start()
         {
             _body = GetComponent<Rigidbody2D>();

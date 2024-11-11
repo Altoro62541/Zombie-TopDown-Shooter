@@ -13,6 +13,8 @@ namespace ZombieShooter.InventorySystem.SO
         [SerializeField, MinValue(1)] private float _lowStrengthPerShoot = 1;
         [SerializeField, MinValue(1)] private float _damage = 1;
 
+
+
         public int Ammunition => ammunition;
         public float SpeedShoot => _speedShoot;
         public float SpeedReload => _speedReload;

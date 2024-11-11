@@ -94,7 +94,6 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             if (_currentAmmunition > 0)
             {
                 _currentAmmunition--;
-                Debug.Log(nameof(Shoot));
             }
         }
 
