@@ -7,7 +7,9 @@ namespace ZombieShooter.InventorySystem.SO
     public abstract class ScriptableItem : ScriptableObjectIdentity
     {
         [SerializeField, PreviewField(60)] private Sprite _icon;
+        [Space]
         [SerializeField] private string _name;
+        [Space]
         [SerializeField, TextArea] private string _description;
 
         public Sprite Icon => _icon;

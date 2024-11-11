@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ZombieShooter.InventorySystem.SO
 {
+    [CreateAssetMenu(menuName = "Inventory/Items/Food")]
     public class FoodItem : ScriptableItem
     {
         [SerializeField, MinValue(1)] private float _healing = 5;

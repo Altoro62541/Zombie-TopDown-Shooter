@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Foodstem
   m_EditorClassIdentifier: 
-  m_GroupName: FoodsItems
+  m_GroupName: Foodstem
   m_Data:
     m_SerializedData: []
   m_GUID: d753a9b1a9697094198e33057a23e96c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 279b4d8877970414c931c78d642d1f8e
+    m_Address: Tomato_Food
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 890b5acbe2c821b4baca470eb1446a96, type: 2}
   m_SchemaSet:

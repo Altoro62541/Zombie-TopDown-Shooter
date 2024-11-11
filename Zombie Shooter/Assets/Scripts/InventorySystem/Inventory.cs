@@ -27,6 +27,14 @@ namespace ZombieShooter.InventorySystem
             Debug.Log($"added new itwm to inventory {item.ToString()}");
         }
 
+        public void Add(IEnumerable<Item> items)
+        {
+            foreach (var item in items)
+            {
+                Add(item);
+            }
+        }
+
         public void Clear()
         {
             _items.Clear();
@@ -35,6 +43,11 @@ namespace ZombieShooter.InventorySystem
         public bool Contains(Item item)
         {
             return _items.Contains(item);
+        }
+
+        public bool Contains(string guid)
+        {
+            return _items.Any(x => x.GUID == guid || x.ReferenceGUID == guid);
         }
 
         public void CopyTo(Item[] array, int arrayIndex)
