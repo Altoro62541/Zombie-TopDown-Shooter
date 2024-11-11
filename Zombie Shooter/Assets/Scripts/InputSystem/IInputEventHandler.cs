@@ -5,6 +5,8 @@ namespace ZombieShooter.InputSystem
 {
     public interface IInputEventHandler
     {
-        event Action<Vector2> OnLeftButton;
+        event Action OnLeftButton;
+        event Action OnRightButton;
+        event Action OnReloadButton;
     }
 }

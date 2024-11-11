@@ -9,6 +9,7 @@ namespace ZombieShooter.HealthSystem
         [SerializeField] private FloatReactiveProperty _health = new();
         [SerializeField] private FloatReactiveProperty _maxHealth = new();
         public Subject<object> OnHit = new Subject<object>();
+        public event Action OnDead;
 
         public IReadOnlyReactiveProperty<float> Health => _health;
 
@@ -27,6 +28,12 @@ namespace ZombieShooter.HealthSystem
             }
 
             _health.Value = Mathf.Clamp(_health.Value - damage, 0, _maxHealth.Value);
+
+            if (_health.Value <= 0)
+            {
+                OnDead?.Invoke();
+                Destroy(gameObject);
+            }
         }
 
         public void SetHealth (float health)
