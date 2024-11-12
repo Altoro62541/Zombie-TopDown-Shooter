@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f8f7d1e9ac2974b9b8d06aecb437f5, type: 3}
   m_Name: ShellEjectConfig
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 8798373653182304824, guid: a0908b7c6f07556459345eb91c77efc6, type: 3}
-  ejectForce: 0.5
-  fadeDuration: 1
-  lifeTime: 1
+  _shellPrefab: {fileID: 8798373653182304824, guid: a0908b7c6f07556459345eb91c77efc6, type: 3}
+  _ejectForce: 0.5
+  _fadeDuration: 1
+  _lifeTime: 1

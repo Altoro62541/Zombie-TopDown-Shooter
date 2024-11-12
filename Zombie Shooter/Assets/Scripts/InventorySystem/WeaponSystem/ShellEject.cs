@@ -11,8 +11,9 @@ namespace ZombieShooter.WeaponSystem
 public class ShellEject : MonoBehaviour
 {
 [Inject] ShellEjectConfig _config;
+[Inject] IWeaponHandler weaponHandler;
 private Transform _ejectionPoint;
-private IWeaponHandler weaponHandler;
+private GameObject ShellPrefab;
 
 private void Start()
 {
@@ -45,7 +46,7 @@ private void SubscribeToWeapon(IWeapon weapon)
 
 private void EjectShell()
 {
-    GameObject shell = Instantiate(_config.shellPrefab, _ejectionPoint.position, _ejectionPoint.rotation);
+    var shell = Instantiate(ShellPrefab, _ejectionPoint.position, _ejectionPoint.rotation);
     shell.SetActive(true);
 
     Rigidbody2D shellRb = shell.GetComponent<Rigidbody2D>();
@@ -53,7 +54,7 @@ private void EjectShell()
     {
         Vector2 shootDirection = (Vector2)_ejectionPoint.up;
 
-        shellRb.velocity = shootDirection * _config.ejectForce;
+        shellRb.velocity = shootDirection * _config.EjectForce;
 
         shellRb.angularVelocity = 0; 
     }
@@ -63,12 +64,12 @@ private void EjectShell()
 
 private IEnumerator FadeAndDestroyShell(GameObject shell)
 {
-    yield return new WaitForSeconds(_config.lifeTime);
+    yield return new WaitForSeconds(_config.LifeTime);
 
     SpriteRenderer renderer = shell.GetComponent<SpriteRenderer>();
     if (renderer != null)
     {
-        renderer.DOFade(0, _config.fadeDuration).OnComplete(() =>
+        renderer.DOFade(0, _config.FadeDuration).OnComplete(() =>
         {
             Destroy(shell);
         });
