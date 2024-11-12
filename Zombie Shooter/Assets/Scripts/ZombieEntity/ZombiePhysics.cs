@@ -9,6 +9,8 @@ namespace ZombieShooter.ZombieEntity
 
         public float Radius => _collider.radius;
 
+        public bool Enabled { get => _collider.enabled; set => _collider.enabled = value; }
+
         private void Awake()
         {
             _collider = GetComponent<CircleCollider2D>();

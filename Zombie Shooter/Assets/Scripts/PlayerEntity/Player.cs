@@ -1,4 +1,5 @@
 using UnityEngine;
+using ZombieShooter.Handlers;
 using ZombieShooter.HealthSystem;
 using ZombieShooter.PlayerEntity.SO;
 namespace ZombieShooter.PlayerEntity
@@ -8,6 +9,8 @@ namespace ZombieShooter.PlayerEntity
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent (typeof(PlayerSpriteHandler))]
     [RequireComponent(typeof(PlayerShootPoint))]
+    [RequireComponent(typeof(Despawn))]
+    [RequireComponent(typeof(EnabledComponentsHandler))]
     public class Player : MonoBehaviour, IPlayer
     {
         private HealthComponent _healthComponent;

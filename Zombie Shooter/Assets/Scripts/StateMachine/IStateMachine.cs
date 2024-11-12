@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace ZombieShooter.States
 {
-    public interface IStateMachine<TTarget>
+    public interface IStateMachine<TTarget> : IEnabledComponent
     {
         event UnityAction<IState> OnStateChanged;
 

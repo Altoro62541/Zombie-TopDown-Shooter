@@ -2,7 +2,7 @@
 
 namespace ZombieShooter.AI
 {
-    public interface IAI
+    public interface IAI : IEnabledComponent
     {
         void MoveTo(Vector3 point);
         void MoveTo(Transform transform);

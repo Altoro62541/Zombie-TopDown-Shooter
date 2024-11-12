@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 using ZombieShooter.Helpers;
 using ZombieShooter.PlayerEntity;
 using ZombieShooter.States;
@@ -20,12 +21,22 @@ namespace ZombieShooter.StateMachine.ZombieStates
         {
             Vector3 randomPoint = Random.insideUnitCircle * _radius;
             randomPoint = randomPoint + Target.transform.position;
+            Target.HeathComponent.OnHit += OnHit;
 
             Target.AI.MoveTo(randomPoint);
         }
 
         public override void Exit()
         {
+            Target.HeathComponent.OnHit -= OnHit;
+        }
+
+        private void OnHit(object damager)
+        {
+            if (damager is IPlayer player)
+            {
+                Target.StateMachine.TurnMoveToPlayer(player);
+            }
         }
 
         public void OnFixedUpdate()

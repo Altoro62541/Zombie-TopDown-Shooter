@@ -1,6 +1,6 @@
 ﻿namespace ZombieShooter.ZombieEntity
 {
-    public interface IZombiePhysics
+    public interface IZombiePhysics : IEnabledComponent
     {
         float Radius { get; }
     }

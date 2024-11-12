@@ -29,6 +29,11 @@ namespace ZombieShooter.PlayerEntity
             {
                 Move(_targetPosition);
             }
+
+            else
+            {
+                _body.velocity = Vector2.zero;
+            }
         }
 
 

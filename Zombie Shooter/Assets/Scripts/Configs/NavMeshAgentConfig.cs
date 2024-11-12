@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ZombieShooter.Configs
 {
     [CreateAssetMenu(menuName = "Configs/AI/Nav Mesh Agent Config")]
-    public class NavMeshAgentConfig : ScriptableObject
+    public class NavMeshAgentConfig : ScriptableConfig
     {
         [SerializeField, MinValue(0)] private float _stopDistance = 0.1f;
         [SerializeField, MinValue(0)] private float _stopMagnitude = 0.15f;

@@ -16,10 +16,20 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
+            Target.Despawn.IsActive = false;
+            _player.HeathComponent.OnDead += OnDeadPlayer;
+        }
+
+        private void OnDeadPlayer()
+        {
+            _player.HeathComponent.OnDead -= OnDeadPlayer;
+            Target.StateMachine.TurnIdle();
         }
 
         public override void Exit()
         {
+            Target.Despawn.IsActive = true;
+            _player.HeathComponent.OnDead -= OnDeadPlayer;
         }
 
         public void OnFixedUpdate()

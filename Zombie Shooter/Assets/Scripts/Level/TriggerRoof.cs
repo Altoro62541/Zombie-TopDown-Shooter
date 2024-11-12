@@ -1,11 +1,12 @@
 using DG.Tweening;
 using UnityEngine;
+using Zenject;
 using ZombieShooter.PlayerEntity;
 namespace ZombieShooter.Level
 {
     public class TriggerRoof : MonoBehaviour
     {
-        [SerializeField] private TriggerRoofConfig _config; 
+        [Inject] private TriggerRoofConfig _config; 
         private SpriteRenderer _spriteRenderer;
         private Color _alphaColor;
         private Color _defaultColor;

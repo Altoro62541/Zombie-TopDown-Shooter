@@ -17,12 +17,37 @@ namespace ZombieShooter.AI.ZombieAI
         {
             get
             {
+                if (!Enabled)
+                {
+                    return true;
+                }
+
                 return !_agent.pathPending &&
                        _agent.remainingDistance <= _agent.stoppingDistance;
             }
         }
 
         public Vector3 SteeringTarget => _agent.steeringTarget;
+
+        public bool Enabled
+        {
+            get
+            {
+                return _agent.enabled;
+            }
+
+            set
+            {
+                if (!value)
+                {
+                    _agent.SetDestination(transform.position);
+
+                }
+
+                _agent.isStopped = !value;
+                _agent.enabled = value;
+            }
+        }
 
         private void Awake()
         {
