@@ -12,19 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7912ce6ff4e3924ab1632e1f7be34a0, type: 3}
   m_Name: Start Items Container
   m_EditorClassIdentifier: 
-  _items:
-  - m_AssetGUID: 279b4d8877970414c931c78d642d1f8e
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 279b4d8877970414c931c78d642d1f8e
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 279b4d8877970414c931c78d642d1f8e
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  _items: []
   _startWeapon:
     m_AssetGUID: 9c708bb0be211934eaa8c654cc6cc25a
     m_SubObjectName: 

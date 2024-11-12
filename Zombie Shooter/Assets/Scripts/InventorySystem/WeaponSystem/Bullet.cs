@@ -58,7 +58,10 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
             {
                 gameObject.SetActive(false);
             }
-
+            if (collision.collider.TryGetComponent(out EnvironmentObject environment))
+            {
+                gameObject.SetActive(false);
+            }
 
         }
     }

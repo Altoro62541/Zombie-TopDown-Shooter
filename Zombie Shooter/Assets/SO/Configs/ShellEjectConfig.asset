@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782f9cc1edf25484a9b82196a6d9bbf1, type: 3}
-  m_Name: Despawn Config
+  m_Script: {fileID: 11500000, guid: b9f8f7d1e9ac2974b9b8d06aecb437f5, type: 3}
+  m_Name: ShellEjectConfig
   m_EditorClassIdentifier: 
-  _speed: 0.2
+  shellPrefab: {fileID: 8798373653182304824, guid: a0908b7c6f07556459345eb91c77efc6, type: 3}
+  ejectForce: 0.5
+  fadeDuration: 1
+  lifeTime: 1

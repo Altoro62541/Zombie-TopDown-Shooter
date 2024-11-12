@@ -16,7 +16,8 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
-            Target.Despawn.IsActive = false;
+            if(Target.Despawn.IsActiveAwake)
+                Target.Despawn.IsActive = false;
             _player.HeathComponent.OnDead += OnDeadPlayer;
         }
 
@@ -28,7 +29,8 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Exit()
         {
-            Target.Despawn.IsActive = true;
+            if(Target.Despawn.IsActiveAwake)
+                Target.Despawn.IsActive = true;
             _player.HeathComponent.OnDead -= OnDeadPlayer;
         }
 

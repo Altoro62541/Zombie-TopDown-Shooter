@@ -17,8 +17,8 @@ namespace ZombieShooter
         [SerializeField] private bool _useDOTween = true;
         [SerializeField, MinValue(0.1f)] private float _time = 60;
         private IHealthComponent _healthComponent;
-
-
+        private bool _isActiveAwake;
+        public bool IsActiveAwake => _isActiveAwake;
 
         public float Time { get => _time; set => _time = value; }
 
@@ -39,6 +39,7 @@ namespace ZombieShooter
         private void Awake()
         {
             TryGetComponent(out _healthComponent);
+            _isActiveAwake = IsActive;
         }
 
         private void Start()

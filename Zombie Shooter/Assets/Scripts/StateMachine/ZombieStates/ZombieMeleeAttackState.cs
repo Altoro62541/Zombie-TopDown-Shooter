@@ -24,7 +24,8 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
-            Target.Despawn.IsActive = false;
+            if(Target.Despawn.IsActiveAwake)
+                Target.Despawn.IsActive = false;
             Target.AI.Stop();
             _cancellationTokenSource = new();
             _player.HeathComponent.OnDead += OnDeadPlayer;

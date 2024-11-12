@@ -7,6 +7,7 @@ namespace ZombieShooter.InputSystem
         public event Action OnLeftButton;
         public event Action OnRightButton;
         public event Action OnReloadButton;
+        public event Action OnPickEButton;
 
         private void Update()
         {
@@ -23,6 +24,11 @@ namespace ZombieShooter.InputSystem
             if (Input.GetKeyDown(KeyCode.R))
             {
                 OnReloadButton?.Invoke();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                OnPickEButton?.Invoke();
             }
         }
 

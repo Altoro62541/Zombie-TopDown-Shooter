@@ -25,11 +25,16 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
+            if(Target.Despawn.IsActiveAwake)
+            {   
+                Target.Despawn.IsActive = true;
+                
+            }
             Target.AI.Stop();
             _cancellationTokenSource = new();
             TurnWanderingDelay();
-            Target.Despawn.IsActive = true;
             Target.HeathComponent.OnHit += OnHit;
+            
         }
 
         private void OnHit(object damager)
