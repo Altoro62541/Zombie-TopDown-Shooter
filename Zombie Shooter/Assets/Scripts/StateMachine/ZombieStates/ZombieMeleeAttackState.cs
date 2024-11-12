@@ -27,17 +27,25 @@ namespace ZombieShooter.StateMachine.ZombieStates
             Target.Despawn.IsActive = false;
             Target.AI.Stop();
             _cancellationTokenSource = new();
+            _player.HeathComponent.OnDead += OnDeadPlayer;
             Attack().Forget();
         }
 
         public override void Exit()
         {
+            _player.HeathComponent.OnDead -= OnDeadPlayer;
             _cancellationTokenSource?.Cancel();
         }
 
         public void SetData(IPlayer player)
         {
             _player = player;
+        }
+
+        private void OnDeadPlayer()
+        {
+            _player.HeathComponent.OnDead -= OnDeadPlayer;
+            Target.StateMachine.TurnIdle();
         }
 
         public void OnFixedUpdate()
