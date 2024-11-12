@@ -51,7 +51,7 @@ namespace ZombieShooter.PlayerEntity
         private void OnShoot()
         {
           var bullet =  _bulletFactory.Create(_bulletPrefab, _point.position, _point.rotation);
-            bullet.SetData(new(_currentWeapon.Damage, 100));
+            bullet.SetData(new(_currentWeapon.Damage, 100, _player));
         }
     }
 }

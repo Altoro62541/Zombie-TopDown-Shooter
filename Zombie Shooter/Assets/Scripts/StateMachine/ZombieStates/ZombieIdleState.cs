@@ -29,11 +29,24 @@ namespace ZombieShooter.StateMachine.ZombieStates
             _cancellationTokenSource = new();
             TurnWanderingDelay();
             Target.Despawn.IsActive = true;
+            Target.HeathComponent.OnHit += OnHit;
+        }
+
+        private void OnHit(object damager)
+        {
+            if (damager is IPlayer player)
+            {
+                Target.StateMachine.TurnMoveToPlayer(player);
+            }
         }
 
         public override void Exit()
         {
-            _cancellationTokenSource?.Cancel();
+            if (_cancellationTokenSource != null && !_cancellationTokenSource.IsCancellationRequested)
+            {
+                _cancellationTokenSource.Cancel();
+            }
+            Target.HeathComponent.OnHit -= OnHit;
         }
 
         public void OnFixedUpdate()
