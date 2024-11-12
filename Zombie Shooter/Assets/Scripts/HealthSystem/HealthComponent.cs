@@ -32,7 +32,6 @@ namespace ZombieShooter.HealthSystem
             if (_health.Value <= 0)
             {
                 OnDead?.Invoke();
-                Destroy(gameObject);
             }
         }
 

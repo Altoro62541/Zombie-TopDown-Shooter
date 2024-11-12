@@ -18,7 +18,7 @@ namespace ZombieShooter.Spawn
         [Inject] private IPlayer _player;
         [Inject] private IDayCounterHandler _dayHandler;
         [SerializeField] private ZombieSpawnSettings _spawnSettings;
-        [SerializeField] private ZombieSpawnerConfig _spawnConfigs;
+        [Inject] private ZombieSpawnerConfig _spawnConfigs;
         [SerializeField] private Zombie[] _zombies;
         public void Start()
         {

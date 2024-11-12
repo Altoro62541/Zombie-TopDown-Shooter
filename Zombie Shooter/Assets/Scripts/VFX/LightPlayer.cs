@@ -15,7 +15,7 @@ namespace ZombieShooter.VFX
         private float _defaultIntensity;
         private Light2D _light;
         private Tween _tween;
-        [SerializeField] private LightPlayerVFXConfig _config;
+        [Inject] private LightPlayerVFXConfig _config;
         [Inject] private ILightProvider _lightProvider;
 
 
