@@ -56,7 +56,10 @@ namespace ZombieShooter
 
             else
             {
-                _cancellationTokenSource?.Cancel();
+                if (_cancellationTokenSource != null && !_cancellationTokenSource.IsCancellationRequested)
+                {
+                    _cancellationTokenSource?.Cancel();
+                }
             }
         }
 
