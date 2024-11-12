@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Tilemaps;
 using ZombieShooter.ZombieEntity;
 
 namespace ZombieShooter.InventorySystem.WeaponSystem
@@ -52,6 +53,13 @@ namespace ZombieShooter.InventorySystem.WeaponSystem
                 zombie.HeathComponent.Damage(_params.Damage, _params.Owner);
                 gameObject.SetActive(false);
             }
+
+            if (collision.collider.TryGetComponent(out Tilemap tilemap))
+            {
+                gameObject.SetActive(false);
+            }
+
+
         }
     }
 }
