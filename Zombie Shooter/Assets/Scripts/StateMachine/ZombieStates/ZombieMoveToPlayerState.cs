@@ -16,10 +16,12 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
+            Target.Despawn.IsActive = false;
         }
 
         public override void Exit()
         {
+            Target.Despawn.IsActive = true;
         }
 
         public void OnFixedUpdate()

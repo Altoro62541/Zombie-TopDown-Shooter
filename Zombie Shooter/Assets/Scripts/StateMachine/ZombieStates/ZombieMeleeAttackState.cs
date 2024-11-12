@@ -24,6 +24,7 @@ namespace ZombieShooter.StateMachine.ZombieStates
 
         public override void Enter()
         {
+            Target.Despawn.IsActive = false;
             Target.AI.Stop();
             _cancellationTokenSource = new();
             Attack().Forget();

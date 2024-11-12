@@ -28,6 +28,7 @@ namespace ZombieShooter.StateMachine.ZombieStates
             Target.AI.Stop();
             _cancellationTokenSource = new();
             TurnWanderingDelay();
+            Target.Despawn.IsActive = true;
         }
 
         public override void Exit()

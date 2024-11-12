@@ -22,6 +22,7 @@ namespace ZombieShooter.ZombieEntity
         private IZombieStateMachine _stateMachine;
         [SerializeField] private ZombieData _data;
         private IZombiePhysics _zombiePhysics;
+        private IDespawn _despawn;
 
         public IHealthComponent HeathComponent => _healthComponent;
 
@@ -30,6 +31,7 @@ namespace ZombieShooter.ZombieEntity
         public IZombieStateMachine StateMachine => _stateMachine;
 
         public IZombiePhysics ZombiePhysics => _zombiePhysics;
+        public IDespawn Despawn => _despawn;
 
         public ZombieData Data => _data;
 
@@ -47,6 +49,7 @@ namespace ZombieShooter.ZombieEntity
             _ai = GetComponent<ZombieAI>();
             _stateMachine = GetComponent<IZombieStateMachine>();
             _zombiePhysics = GetComponent<IZombiePhysics>();
+            _despawn = GetComponent<IDespawn>();
             _healthComponent.SetMaxHealth(_data.Health);
             _healthComponent.SetHealth(_data.Health);
         }
