@@ -10,7 +10,6 @@ namespace ZombieShooter.Configs
         [SerializeField, MinValue(0)] private float _targrtIntensity = 0.3f;
 
         public float SpeedFade => _speedFade;
-
         public float TargrtIntensity => _targrtIntensity;
     }
 }
